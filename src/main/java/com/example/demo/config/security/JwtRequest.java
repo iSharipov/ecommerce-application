@@ -1,16 +1,19 @@
-package com.example.demo.model.requests;
+package com.example.demo.config.security;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class CreateUserRequest {
-
-    @JsonProperty
+public class JwtRequest {
     private String username;
-    @JsonProperty
     private String password;
 
+    public JwtRequest() {
+    }
+
+    public JwtRequest(String username, String password) {
+        this.setUsername(username);
+        this.setPassword(password);
+    }
+
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public void setUsername(String username) {
@@ -18,7 +21,7 @@ public class CreateUserRequest {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
