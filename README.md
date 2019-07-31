@@ -78,3 +78,6 @@ and that should, if those are valid credentials, return a 200 OK with an Authori
 
 ## Testing
 You must implement unit tests demonstrating at least 80% code coverage.
+
+## Jenkins Link
+http://ec2-18-191-50-130.us-east-2.compute.amazonaws.com:8080
