@@ -11,8 +11,11 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 import java.util.function.Function;
 
+import static com.example.demo.config.security.SecurityConstants.TOKEN_PREFIX;
+
 @Component
 public class JwtTokenUtil {
+
     private final JwtProperties jwtProperties;
 
     public JwtTokenUtil(JwtProperties jwtProperties) {
@@ -43,7 +46,7 @@ public class JwtTokenUtil {
     }
 
     public String generateToken(UserDetails userDetails) {
-        return doGenerateToken(userDetails.getUsername());
+        return TOKEN_PREFIX + doGenerateToken(userDetails.getUsername());
     }
 
     private String doGenerateToken(String subject) {
