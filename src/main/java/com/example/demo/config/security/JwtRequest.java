@@ -1,17 +1,15 @@
 package com.example.demo.config.security;
 
-import com.example.demo.validation.PasswordMatches;
-
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
-@PasswordMatches
 public class JwtRequest {
     @NotEmpty
+    @Size(max = 20)
     private String username;
     @NotEmpty
+    @Size(min = 5, max = 8)
     private String password;
-    @NotEmpty
-    private String confirmPassword;
 
     public String getUsername() {
         return this.username;
@@ -27,13 +25,5 @@ public class JwtRequest {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
     }
 }
